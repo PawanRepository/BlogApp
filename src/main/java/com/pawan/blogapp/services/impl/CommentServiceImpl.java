@@ -3,12 +3,13 @@ package com.pawan.blogapp.services.impl;
 
 
 import org.modelmapper.ModelMapper;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pawan.blogapp.entities.Comments;
 import com.pawan.blogapp.entities.Posts;
-import com.pawan.blogapp.entities.User;
+
 import com.pawan.blogapp.exceptions.ResourceNotFoundException;
 import com.pawan.blogapp.payloads.CommentDto;
 import com.pawan.blogapp.repositories.CommentRepo;
@@ -48,6 +49,11 @@ public class CommentServiceImpl implements CommentService{
 	public void deleteComment(Integer commentId) {
 			Comments deleteComment = this.commentrepo.findById(commentId).orElseThrow(()->new ResourceNotFoundException("Comment", "commentId",commentId));
 			this.commentrepo.delete(deleteComment);
+	}
+	@Override
+	public String msg(String s) {
+		s= "ignore this msg";
+		return s;
 	}
 
 

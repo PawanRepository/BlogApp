@@ -11,4 +11,6 @@ public interface CommentService {
 	
 	CommentDto doComment(CommentDto commentDto, Integer postId);
 	void deleteComment(Integer commentId);
-}
+	String msg(String s);
+	
+	}
